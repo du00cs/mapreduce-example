@@ -1,8 +1,5 @@
-# mapreduce-spark-example
+Demos for mapreduce/spark works, including: 
+1. [x] MapReduce/HBase/Spark Tests
+2. [x] Scalding demo
+3. []  Scrunch demo
 
-各种MapReduce，Spark的测试方法。
-
-[x] MapReduce  
-[ ] HBase  
-[ ] Spark  
-[ ] Spark Streaming  
