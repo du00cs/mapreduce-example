@@ -20,14 +20,15 @@
             <version>0.15.0</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.10</artifactId>
-            <version>1.4.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.twitter</groupId>
             <artifactId>parquet-thrift</artifactId>
             <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>thrift</artifactId>
+            <version>0.5.0-fix-thrift2402</version>
+            <!-- use the version compatible with your local compiler -->
         </dependency>
     </dependencies>
 
@@ -116,7 +117,18 @@
                         <configuration>
                             <artifactSet>
                                 <includes>
-                                    <include>*:*</include>
+                                    <include>org.scala-lang:scala-library</include>
+                                    <include>org.apache.thrift:thrift</include>
+                                    <!-- parquet, scalding -->
+                                    <include>com.twitter:*</include>
+                                    <include>com.twitter.elephantbird:elephant*</include>
+                                    <!-- cascading -->
+                                    <include>cascading:*</include>
+                                    <include>org.scalamacros:quasiquotes_2.10</include>
+                                    <include>com.esotericsoftware.kryo:kryo</include>
+                                    <include>thirdparty:jgrapht-jdk1.6</include>
+                                    <include>org.json4s:*</include>
+                                    <include>com.fasterxml.jackson*:*</include>
                                 </includes>
                             </artifactSet>
                             <filters>

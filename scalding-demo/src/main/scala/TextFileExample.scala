@@ -1,11 +1,6 @@
 import cascading.flow.{Flow, FlowListener}
 import com.twitter.scalding._
 
-/**
-  * Copyright (c) 2015 XiaoMi Inc. All Rights Reserved.
-  * Authors: du00 <duninglin@xiaomi.com>
-  */
-
 class TextFileExample(args: Args) extends Job(args) {
   val key = StatKey("word", "udc")
   val stat = Stat(key)
@@ -16,7 +11,9 @@ class TextFileExample(args: Args) extends Job(args) {
     .sumByKey // reduce num not set
     .write(TypedTsv[(String, Long)](args("output")))
 
-  //
+  /**
+    * "copy" from https://itellity.wordpress.com/2014/10/29/counters-using-cascading-flow-listeners-in-scalding/
+    */
   override def listeners = super.listeners ++ List(new FlowListener {
     override def onStarting(flow: Flow[_]): Unit = {}
 
